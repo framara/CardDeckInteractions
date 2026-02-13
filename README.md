@@ -6,7 +6,7 @@ This is the animation pattern Apple uses in Wallet but barely documents. There i
 
 > Extracted from [ToMe](https://framara.net/projects/ToMe), an iOS app for saving and organizing content from anywhere.
 
-https://github.com/user-attachments/assets/placeholder-video.mp4
+https://github.com/user-attachments/assets/2ec340be-d52f-4a50-a48f-c3d511dd1005
 
 ## The Problem
 
