@@ -42,7 +42,7 @@ struct DeckCardView: View {
 }
 
 #Preview {
-    DeckCardView(card: Card(color: .blue, title: "Blue", sortOrder: 0))
+    DeckCardView(card: Card(color: Color(red: 0.20, green: 0.45, blue: 0.85), title: "Cobalt", sortOrder: 0))
         .frame(height: 220)
         .padding()
 }

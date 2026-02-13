@@ -16,6 +16,9 @@ struct DeckView: View {
     @State private var cardBounceTrigger: Int = 0
     @State private var isReorderingCards: Bool = false
 
+    // Increments on each open to force a fresh ExpandedCardView instance on rapid close/open.
+    @State private var presentationToken: Int = 0
+
     // Fast-scroll bounce detection
     @State private var lastScrollOffset: CGFloat = 0
     @State private var lastScrollTime: Date = .now
@@ -47,7 +50,7 @@ struct DeckView: View {
                             }
                         }
                     )
-                    .id("expanded-\(card.id)")
+                    .id("expanded-\(card.id)-\(presentationToken)")
                     .transition(.opacity)
                 }
             }
@@ -76,6 +79,8 @@ struct DeckView: View {
                     bounceTrigger: cardBounceTrigger,
                     animation: animation,
                     onSelect: { card in
+                        presentationToken &+= 1
+                        scrollOffset = 0
                         withAnimation(CardAnimations.heroTransition) {
                             selectedCard = card
                         }

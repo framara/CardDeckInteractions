@@ -73,19 +73,6 @@ struct ExpandedCardView: View {
                     .coordinateSpace(name: "expandedScroll")
                 }
 
-                // Dismiss button
-                Button {
-                    onDismiss()
-                } label: {
-                    Image(systemName: "xmark")
-                        .font(.system(size: 14, weight: .bold))
-                        .foregroundStyle(.secondary)
-                        .frame(width: 32, height: 32)
-                        .background(.ultraThinMaterial, in: Circle())
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 20)
-                .padding(.top, 8)
             }
             .offset(y: dragDownOffset)
             .opacity(1.0 - (dragDownOffset / geometry.size.height) * 0.3)

@@ -14,11 +14,11 @@ struct Card: Identifiable {
     }
 
     static let samples: [Card] = [
-        Card(color: .red, title: "Red", sortOrder: 0),
-        Card(color: .orange, title: "Orange", sortOrder: 1),
-        Card(color: .yellow, title: "Yellow", sortOrder: 2),
-        Card(color: .green, title: "Green", sortOrder: 3),
-        Card(color: .blue, title: "Blue", sortOrder: 4),
-        Card(color: .purple, title: "Purple", sortOrder: 5),
+        Card(color: Color(red: 0.15, green: 0.15, blue: 0.15), title: "Obsidian", sortOrder: 0),
+        Card(color: Color(red: 0.83, green: 0.18, blue: 0.18), title: "Crimson", sortOrder: 1),
+        Card(color: Color(red: 0.20, green: 0.45, blue: 0.85), title: "Cobalt", sortOrder: 2),
+        Card(color: Color(red: 0.96, green: 0.65, blue: 0.14), title: "Amber", sortOrder: 3),
+        Card(color: Color(red: 0.18, green: 0.62, blue: 0.52), title: "Teal", sortOrder: 4),
+        Card(color: Color(red: 0.55, green: 0.35, blue: 0.75), title: "Violet", sortOrder: 5),
     ]
 }

@@ -205,8 +205,8 @@ All animations use curated spring presets for consistency:
 
 ## Related
 
-- [SwiftDataSharing](https://github.com/paco-gg/SwiftDataSharing) — SwiftData + App Group sharing across app, extension, and widget
-- [CloudKitSharing](https://github.com/paco-gg/CloudKitSharing) — CloudKit sharing + SwiftData with permission management
+- [SwiftDataSharing](https://github.com/framara/SwiftDataSharing) — SwiftData + App Group sharing across app, extension, and widget
+- [CloudKitSharing](https://github.com/framara/CloudKitSharing) — CloudKit sharing + SwiftData with permission management
 
 ## Credits
 
