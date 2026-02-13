@@ -1,0 +1,81 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "CardDeckApp-arm64-apple-macosx26.0-debug.exe": ["<CardDeckApp-arm64-apple-macosx26.0-debug.exe>"]
+  "CardDeckApp-arm64-apple-macosx26.0-debug.module": ["<CardDeckApp-arm64-apple-macosx26.0-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<CardDeckApp-arm64-apple-macosx26.0-debug.exe>","<CardDeckApp-arm64-apple-macosx26.0-debug.module>"]
+  "test": ["<CardDeckApp-arm64-apple-macosx26.0-debug.exe>","<CardDeckApp-arm64-apple-macosx26.0-debug.module>"]
+default: "main"
+nodes:
+  "/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp":
+    is-mutated: true
+commands:
+  "/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp-entitlement.plist":
+    tool: write-auxiliary-file
+    inputs: ["<entitlement-plist>","<com.apple.security.get-task-allow>"]
+    outputs: ["/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp-entitlement.plist"]
+    description: "Write auxiliary file /Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp-entitlement.plist"
+
+  "/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/CardDeckApp.swift","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/Gestures/LongPressDragGesture.swift","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/Helpers/Animations.swift","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/Helpers/HapticManager.swift","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/Models/Card.swift","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/Views/CardStackView.swift","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/Views/DeckCardView.swift","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/Views/DeckView.swift","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/Views/ExpandedCardView.swift"]
+    outputs: ["/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/sources"]
+    description: "Write auxiliary file /Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/sources"
+
+  "/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/Animations.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/Card.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/CardDeckApp.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/CardStackView.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/DeckCardView.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/DeckView.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/ExpandedCardView.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/HapticManager.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/LongPressDragGesture.swift.o"]
+    outputs: ["/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.product/Objects.LinkFileList"
+
+  "/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"]
+    outputs: ["/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+
+  "<CardDeckApp-arm64-apple-macosx26.0-debug.exe>":
+    tool: phony
+    inputs: ["<CardDeckApp-arm64-apple-macosx26.0-debug.exe-CodeSigning>"]
+    outputs: ["<CardDeckApp-arm64-apple-macosx26.0-debug.exe>"]
+
+  "<CardDeckApp-arm64-apple-macosx26.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/CardDeckApp.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/LongPressDragGesture.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/Animations.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/HapticManager.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/Card.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/CardStackView.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/DeckCardView.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/DeckView.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/ExpandedCardView.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/Modules/CardDeckApp.swiftmodule"]
+    outputs: ["<CardDeckApp-arm64-apple-macosx26.0-debug.module>"]
+
+  "C.CardDeckApp-arm64-apple-macosx26.0-debug.exe":
+    tool: shell
+    inputs: ["/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/Animations.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/Card.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/CardDeckApp.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/CardStackView.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/DeckCardView.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/DeckView.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/ExpandedCardView.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/HapticManager.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/LongPressDragGesture.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.product/Objects.LinkFileList"]
+    outputs: ["/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/CardDeckApp"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug","-o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp","-module-name","CardDeckApp","-Xlinker","-no_warn_duplicate_libraries","-emit-executable","-Xlinker","-alias","-Xlinker","_CardDeckApp_main","-Xlinker","_main","-Xlinker","-rpath","-Xlinker","@loader_path","@/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.5/macosx","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-6.2/macosx","-target","arm64-apple-macosx10.13","-Xlinker","-add_ast_path","-Xlinker","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/Modules/CardDeckApp.swiftmodule","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g"]
+
+  "C.CardDeckApp-arm64-apple-macosx26.0-debug.exe-entitlements":
+    tool: shell
+    inputs: ["/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp-entitlement.plist"]
+    outputs: ["<CardDeckApp-arm64-apple-macosx26.0-debug.exe-CodeSigning>"]
+    description: "Applying debug entitlements to ./.build/arm64-apple-macosx/debug/CardDeckApp"
+    args: ["codesign","--force","--sign","-","--entitlements","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp-entitlement.plist","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp"]
+
+  "C.CardDeckApp-arm64-apple-macosx26.0-debug.module":
+    tool: shell
+    inputs: ["/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/CardDeckApp.swift","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/Gestures/LongPressDragGesture.swift","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/Helpers/Animations.swift","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/Helpers/HapticManager.swift","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/Models/Card.swift","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/Views/CardStackView.swift","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/Views/DeckCardView.swift","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/Views/DeckView.swift","/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/Views/ExpandedCardView.swift","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/sources"]
+    outputs: ["/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/CardDeckApp.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/LongPressDragGesture.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/Animations.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/HapticManager.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/Card.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/CardStackView.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/DeckCardView.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/DeckView.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/ExpandedCardView.swift.o","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/Modules/CardDeckApp.swiftmodule"]
+    description: "Compiling Swift Module 'CardDeckApp' (9 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","CardDeckApp","-emit-dependencies","-emit-module","-emit-module-path","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/Modules/CardDeckApp.swiftmodule","-output-file-map","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/output-file-map.json","-incremental","-c","@/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/CardDeckApp.build/sources","-I","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx10.13","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j10","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/framara/Developer/CardDeckInteractions/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","CardDeckApp_main","-swift-version","6","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","carddeckinteractions"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/framara/Developer/CardDeckInteractions/Sources/CardDeckApp/","/Users/framara/Developer/CardDeckInteractions/Package.swift","/Users/framara/Developer/CardDeckInteractions/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
